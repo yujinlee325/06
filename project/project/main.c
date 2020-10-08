@@ -8,18 +8,47 @@
 
 #include <stdio.h>
 
-int square(int a)
+int factorial(int n)
 {
-    return (a*a);
+    int i, res=1;
     
+    for(i=1; i<=n; i++)
+    {
+        res = res * i;
+    }
+        return res;
+}
+
+int combination (int n, int r)
+{
+    int n1, n2, n3;
+    
+    n1= factorial(n);
+    n2= factorial(n-r);
+    n3= factorial(r);
+    return (n1/n2/n3);
+    
+}
+
+int get_integer()
+{
+    int x;
+    
+    printf("input an integer:");
+    scanf("%i", &x);
+    
+    return x;
 }
 
 int main(int argc, const char * argv[]) {
    
-    int a = 2;
+    int n, r, result; //변수선언
     
-    a=square(a);
-    printf("a=%i\n",a);
+    n = get_integer(); //n 입력
+    r = get_integer(); //r 입력
+    result = combination(n,r); //combination()
+    
+    printf("combination result is %i\n", result);
     
     return 0;
 }
