@@ -8,21 +8,30 @@
 
 #include <stdio.h>
 
-int starPrint()
+int sumTwo(int a, int b)
 {
-    int i;
-    for (i=0; i<10; i++)
-        printf("*");
+    return (a+b);
+}
+
+int Square(int n)
+{
+    return(n*n);
     
-    return 0;
-    
+}
+
+int get_max(int x, int y)
+{
+    if(x>y)
+        return x;
+    else
+        return y;
 }
 
 int main(int argc, const char * argv[]) {
    
-    starPrint();
-    starPrint();
-    starPrint();
+    printf("sumTwo : %i\n", sumTwo(1,2));
+    printf("Square : %i\n", Square(5));
+    printf("get_max: %i\n", get_max(10,30));
     
     return 0;
 }
